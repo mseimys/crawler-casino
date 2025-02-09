@@ -22,4 +22,4 @@ RUN poetry install $(test "$YOUR_ENV" == production && echo "--only=main") --no-
 COPY . /app
 
 EXPOSE 5000/tcp
-CMD ["uvicorn", "--workers 4", "cc.app:app", "--port", "5000"]
+CMD ["uvicorn", "--workers", "4", "cc.app:app", "--port", "5000", "--host", "0.0.0.0"]
