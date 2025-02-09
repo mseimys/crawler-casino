@@ -10,9 +10,7 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "fastapi[standard] (>=0.115.8,<0.116.0)",
-    "networkx (>=3.4.2,<4.0.0)",
-    "matplotlib (>=3.10.0,<4.0.0)",
-    "scipy (>=1.15.1,<2.0.0)"
+    "uvicorn (>=0.34.0,<0.35.0)",
 ]
 
 [tool.poe.tasks]

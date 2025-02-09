@@ -22,6 +22,7 @@ html = """
     <style>a {{ display: block }}</style>
 </head>
 <body>
+    <h1>Crawler Casino</h1>
     {body}
 </body>
 </html>
@@ -43,7 +44,7 @@ async def root(request: Request, full_path: str):
             return f'<a href="/{link}">{link}</a>'
 
         body = f"""
-            <h1>You are {depth} levels deep!</h1>
+            <h3>You are {depth} levels deep!</h3>
             <p>Here are some new links to crawl, maybe you'll find something!</p>
             {" ".join([render_link(l) for l in new_links])}
         """
