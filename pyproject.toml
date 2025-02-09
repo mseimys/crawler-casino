@@ -1,0 +1,42 @@
+[project]
+name = "crawler-casino"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Matas Seimys",email = "matas.seimys@gmail.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi[standard] (>=0.115.8,<0.116.0)",
+    "networkx (>=3.4.2,<4.0.0)",
+    "matplotlib (>=3.10.0,<4.0.0)",
+    "scipy (>=1.15.1,<2.0.0)"
+]
+
+[tool.poe.tasks]
+test = "pytest -v"
+run = "uvicorn cc.app:app --host 0.0.0.0 --port 8000 --reload"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+package-mode = false
+
+[tool.poetry.group.dev.dependencies]
+poethepoet = "^0.32.2"
+pytest = "^8.3.4"
+
+[tool.ruff]
+line-length = 120
+indent-width = 4
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "cc",
+]
